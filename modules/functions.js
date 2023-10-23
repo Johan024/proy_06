@@ -1,8 +1,10 @@
 const functions = {};
 
 const signo = (numero) => {
+    //se ejecuta si la condicion es verdadera
     if (numero >= 0) {
         return 'positivo'
+    //se ejecuta si la condicion es falsa
     } else {
         return 'negativo'
     }
@@ -20,8 +22,10 @@ const interfazSigno = (numero) => {
 
 const encontroCaracter = (caracter) => {
     const datos = ['A', 'B', 'C', 'D', 'E'];
+    //se ejecuta si la condicion es verdadera
     if (datos.includes(caracter)) {
         return 'se encuentra';
+    //se ejecuta si la condicion es falsa    
     } else {
         return 'no se encuentra';
     }
@@ -38,8 +42,10 @@ const interfazEncontroCaracter = (caracter) => {
 
 const busquedaBebida = (bebida) => {
     const datos = ['VINO', 'CERVEZA', 'GASEOSA', 'AGUA'];
+    //se ejecuta si la condicion es verdadera
     if (datos.includes(bebida)) {
         return 'se encuentra en la barra';
+    //se ejecuta si la condicion es falsa
     } else {
         return 'se encuentra en la tienda';
     }
@@ -57,10 +63,13 @@ const interfazbusquedaBebida = (bebida) => {
 const medioTransporte = (medio) => {
     const datos = ['AVION', 'BUS'];
     const datos2= ['BICICLETA', 'MOTO'];
+    //se ejecuta si la condicion es verdadera
     if (datos.includes(medio)){
         return "Recuerda traer dinero para el pasaje";
+    //se ejecuta si la condicion es verdadera
     } else if (datos2.includes(medio)) {
         return "Recuerda traer ropa comoda";
+    //se ejecuta si la condicion es falsa
     } else { 
         return "Este medio de transporte no se encuentra"
     }
@@ -76,13 +85,17 @@ const interfazmedioTransporte = (medio) => {
 
 
 const Menu = (Menu) => {
+    /*se utiliza para tomar decisiones basadas en múltiples
+     valores posibles de una expresión*/
 switch (Menu) {
+    //cada case es una opcion
     case 'CARNE':
         return 'te recomiendo tomar VINO TINTO';
     case 'PESCADO':
         return 'te recomiendo tomar VINO BLANCO';
     case 'VERDURA':
         return 'te recomiendo tomar AGUA';
+    //se ejecuta si la expresión no coincide con ninguno de los casos
     default:
         return 'te recomiendo tomar AGUA';
     }
@@ -99,7 +112,7 @@ const interfazescogerMenu = (Menu) => {
 
 const Pagoaccesojuegos = (Pagoaccesojuegos) => {
     const juegos = ['Consolas', 'Juegos 2d', 'Juegos 3D', 'Realidad Virtual'];
-    
+    //se ejecuta si se cumple cierta condicion
     if (Pagoaccesojuegos >= 4000, (juegos.includes(Pagoaccesojuegos))) {
         return ['Consolas', 'Juegos 2D', 'Juegos 3D', 'Realidad Virtual'];
     } else if (Pagoaccesojuegos >= 3000) {
@@ -108,6 +121,8 @@ const Pagoaccesojuegos = (Pagoaccesojuegos) => {
         return ['Consolas', 'Juegos 2D'];
     } else if (Pagoaccesojuegos >= 1000) {
         return ['Consolas'];
+    /*se utiliza para manejar un caso predeterminado o de respaldo cuando 
+    ninguna de las condiciones anteriores es verdadera*/
     } else {
         return 'ERROR: Debes ingresar mas dinero para acceder a los juegos'
     }
@@ -122,11 +137,13 @@ const interfazPagoaccesojuegos = (Pagoaccesojuegos) => {
 
 
 const Numero = (Numero) => {
+    //se ejecuta si se cumple cierta condicion
     if (Numero <= 0) {
         console.log("ingresa un número positivo mayor que cero.");
         return;
       }
     console.log("Enteros positivos hasta", Numero);
+    //for para repetir el codigo cierta cantidad de veces
     for (let i = 1; i <= Numero; i++) {
       console.log(i);
     }
@@ -147,7 +164,9 @@ const numer = (numer) => {
       }
       console.log("Números pares incluidos en el numero ", numer);
       const numerStr = numer.toString();
+      //length para obtener la cantidad de caracteres
       for (let i = 0; i < numerStr.length; i++) {
+        ////ParseInt convierte cadenas en numeros enteros
         const digito = parseInt(numerStr[i]);
         if (digito % 2 === 0) {
           console.log(digito);
@@ -164,6 +183,7 @@ const interfaznumerosPares = (numer) => {
 
 
 const nume = (nume) => {
+    //se ejecuta si i es menor o igual a 10
     for (let i = 1; i <= 10; i++) {
         let resultado = nume * i;
         console.log(`${nume} x ${i} = ${resultado}`.black.bgCyan);
@@ -179,7 +199,9 @@ const interfaztablaMultiplicar = (nume) => {
 
 
 const base = (base) => {
+    //se ejecuta si i es menor que base
     for (let i = 0; i < base; i++) {
+        //Se ejecuta si j es menor que base
         for (let j = 0; j < base; j++) {
           const num = i * base + j;
           console.log((`Número en base ${base}: ${num.toString(base)}`.cyan));
@@ -196,17 +218,21 @@ const interfazcontadorBase = (base) => {
 
 const inicioSesion = (clave) => {
 const datos3 = ['carretera', 'senacba', 'mosquera']; 
+//intentos como dato numeric
 let intentos = 0;   
+//se ejecuta si se digita la clave correcta
     if (datos3.includes(clave)) {
         console.log('******************************************************'.bgRed)
         console.log('                 Acceso concedido                     '.bgCyan);
         console.log('******************************************************\n'.red)
+        //se ejecuta si se digita la clave incorrecta
     } else {
         intentos++;
         console.log('******************************************************'.bgRed)
         console.log('                 Acceso denegado                      '.bgRed);
         console.log('******************************************************\n'.red)
     }
+    //se ejecuta si se digita la clave incorrecta 3 veces
         if (intentos >= 3) {
             mostrarAlertaIntruso();
         }
@@ -221,20 +247,24 @@ function mostrarAlertaIntruso() {
 
 
 function minimoMaximo(numeros) {
+    //Se ejecuta si es verdadero
     if (!numeros || numeros.length === 0) {
     }
     let minimo = numeros[0];
     let maximo = numeros[0];
     let suma = 0;
     for (const numero of numeros) {
+        //numero minimo
         if (numero < minimo) {
             minimo = numero;
         }
+        //numero maximo
         if (numero > maximo) {
             maximo = numero;
         }
         suma += numero;
     }
+    //promedio
     const promedio = suma / numeros.length;
     
     console.log(`******************************************************`.red);
@@ -251,7 +281,7 @@ function numerosPares2(numeros) {
       console.log(colors.red('El arreglo de números está vacío.'));
       return;
     }
-  
+    //filter filtra elementos de un arreglo
     const numerosPares = numeros.filter(numero => numero % 2 === 0);
 
     console.log(`******************************************************`.red);
@@ -262,6 +292,7 @@ function numerosPares2(numeros) {
     console.log('******************************************************'.red);
   }
 
+//se llaman todas la funciones definidas anteriormente
 functions.signo = signo;
 functions.interfazSigno = interfazSigno;
 functions.encontroCaracter = encontroCaracter;
@@ -286,5 +317,5 @@ functions.inicioSesion = inicioSesion;
 functions.minimoMaximo = minimoMaximo;
 functions.numerosPares2 = numerosPares2;
 
-
+//se exportan las funciones
 module.exports = functions;

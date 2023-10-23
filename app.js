@@ -1,5 +1,6 @@
-require('colors');
+require('colors'); //requerir carpeta colors
 
+//requerir las functions
 const functions = require('./modules/functions.js');
 
 
@@ -8,7 +9,9 @@ const main = async() =>{
 
     console.clear();
 
+    //se dan los datos para que se ejecute
     const numero = -196;
+    //se llama la funcion con el nombre del valor
     functions.interfazSigno(numero);
 
     const caracter = 'a';
